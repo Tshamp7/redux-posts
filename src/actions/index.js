@@ -16,6 +16,7 @@ export const fetchUser = (userId) => async (dispatch) => {
   dispatch({ type: "FETCH_USER", payload: response.data });
 };
 
+// this will fetch all posts and the unique users that created those posts. This will fetch each user only once avoiding fetching the same user multiple times.
 export const fetchPostsAndUsers = () => async (dispatch, getState) => {
   await dispatch(fetchPosts());
 
